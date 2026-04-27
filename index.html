@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screening using NLP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                AI Resume Screen
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">AI Resume Screening using NLP</h1>
+                <p class="hero-subtitle">Smart hiring using Artificial Intelligence</p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">Upload Resume</a>
+                    <a href="https://github.com" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> View GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-file-alt"></i>
+                    <div class="card-content">
+                        <h3>Resume Analysis</h3>
+                        <p>Advanced NLP processing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Resume Parsing</h3>
+                    <p>Extract text from PDF and DOCX files automatically</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Skill Extraction</h3>
+                    <p>Identify key skills using advanced NLP techniques</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Candidate Ranking</h3>
+                    <p>Rank candidates based on job match percentage</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Job Description Matching</h3>
+                    <p>Compare resumes with job requirements</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Screening</h3>
+                    <p>Process resumes in seconds with high accuracy</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Accurate Results</h3>
+                    <p>Precise matching using machine learning algorithms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Try It Out</h2>
+            <div class="demo-container">
+                <form id="analyze-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="resume">Upload Resume (PDF/DOCX)</label>
+                        <div class="upload-area" id="upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop your resume here or <span class="upload-link">browse</span></p>
+                            <input type="file" id="resume" name="resume" accept=".pdf,.docx" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-description">Job Description</label>
+                        <textarea id="job-description" name="job_description" placeholder="Paste the job description here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary analyze-btn">
+                        <i class="fas fa-search"></i> Analyze Resume
+                    </button>
+                </form>
+                <div id="results" class="results hidden">
+                    <div class="result-card">
+                        <div class="score-circle">
+                            <span id="match-score">0</span>
+                            <span class="percent">%</span>
+                        </div>
+                        <h3>Match Score</h3>
+                    </div>
+                    <div class="skills-section">
+                        <div class="skills-matched">
+                            <h4>Matched Skills</h4>
+                            <div id="matched-skills" class="skills-list"></div>
+                        </div>
+                        <div class="skills-missing">
+                            <h4>Missing Skills</h4>
+                            <div id="missing-skills" class="skills-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>This AI-powered resume screening system uses advanced Natural Language Processing (NLP) techniques to analyze resumes and match them with job descriptions. Built with Python Flask backend and modern web technologies.</p>
+                    <h3>Technologies Used:</h3>
+                    <ul>
+                        <li><strong>Python Flask:</strong> Lightweight web framework for the backend API</li>
+                        <li><strong>NLTK:</strong> Natural Language Toolkit for text preprocessing</li>
+                        <li><strong>PyPDF2 & python-docx:</strong> Libraries for extracting text from PDF and DOCX files</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-cogs"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AI Resume Screening. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="loading" class="loading-overlay hidden">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Analyzing resume...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
